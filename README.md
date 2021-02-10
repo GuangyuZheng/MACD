@@ -1,4 +1,4 @@
-# ART
+# MACD
 ### Implementation for EMNLP 2020 "Unsupervised Natural Language Inference via Decoupled Multimodal Contrastive Learning"
 
 # Requirements

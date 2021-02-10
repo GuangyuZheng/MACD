@@ -1,0 +1,44 @@
+TASK_NAME: 'flickr'
+IMAGE_DIR: '/home/a/cv_data/flickr30k/flickr30k-images'
+DATA_DIR: '/home/a/MACD/datasets/flickr/'
+OUTPUT_DIR: '/home/a/MACD/macd/flickr-resnet'
+GPU_ID: 0
+BATCH_SIZE: 64
+GRAD_ACCUM: 8
+EPOCH: 10
+LR: 0.0001
+NUM_WORKERS: 8
+
+TRAIN: True
+EVAL: True
+
+SMOOTH:
+  GAMMA1: 1.0
+  GAMMA2: 5.0
+  GAMMA3: 10.0
+  TYPE: 'unidirectional'
+
+LWF:
+  MAX_LEN: -1
+  MODEL_TYPE: 'bert'
+  MODEL_NAME: 'bert-base-uncased'
+  CACHE_DIR: '/home/a/nlp_data/bert/'
+  LOWER_CASE: True
+  LAMBDA0: 1.0
+
+TEXT:
+  MAX_LEN: 32
+  MODEL_TYPE: 'bert'
+  MODEL_NAME: 'bert-base-uncased'
+  CACHE_DIR: '/home/a/nlp_data/bert/'
+  LOWER_CASE: True
+
+IMAGE:
+  ENCODER: 'resnet-50'
+  RESIZE_SIZE: 224
+  CROP_SIZE: 224
+  # MODEL_PATH: '/home/a/cv_data/Inception-v3/inception_v3_google-1a9a5a14.pth'
+
+MACD:
+  LOCAL_WEIGHT: 1.0
+  GLOBAL_WEIGHT: 1.0
